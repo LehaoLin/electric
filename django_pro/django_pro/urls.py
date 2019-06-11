@@ -21,6 +21,5 @@ from django.conf import settings
 from electric import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('index/', views.index)
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
