@@ -11,7 +11,7 @@ import numpy as np
 import tkinter as tk
 import random
 
-dir_ = '/Users/dsc/Githome/django_pro/electric/'
+dir_ = '/Users/lingo/Documents/meta/E_power/electric/django_pro/electric'
 
 def norm_raw(raw_list):
     if raw_list[2] == 1:
