@@ -74,15 +74,14 @@
 <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
 <script type="text/javascript">
 
-
-  var data = {{chart|safe}}
-// data = [{'day':'20190606', 'count':1322,'max':100},
-//         {'day':'20190607', 'count':3313,'max':100},
-//         {'day':'20190608', 'count':4415,'max':100},
-//         {'day':'20190609', 'count':1233,'max':100},
-//         {'day':'20190610', 'count':1012,'max':100},
-//         {'day':'20190611', 'count':2343,'max':100},
-//       ]
+  
+ data = [{'day':'20190606', 'count':1322,'max':100},
+         {'day':'20190607', 'count':3313,'max':100},
+         {'day':'20190608', 'count':4415,'max':100},
+         {'day':'20190609', 'count':1233,'max':100},
+         {'day':'20190610', 'count':1012,'max':100},
+         {'day':'20190611', 'count':2343,'max':100},
+       ]
 
 
   var chart = new G2.Chart({
@@ -127,7 +126,24 @@
 
   $(document).ready(function(){
     $('button').click(function(){
-        $.ajax({
+        aa()
+    })
+    $('#max').blur(function(){
+      var  max  = $(this).val()
+      var min = $('#min').val()
+      if (max != '' && min != ''){
+        aa()
+      }
+    })
+    $('#min').blur(function(){
+      var  min  = $(this).val()
+      var max = $('#max').val()
+      if (max != '' && min != ''){
+        aa()
+      }
+    })
+    function aa(){
+      $.ajax({
           url:'',
           type:'post',
           dataType:'json',
@@ -141,7 +157,7 @@
             $('#result').html(data.result+'度')
           }
       })
-    })
+    }
   })
 </script>
 
