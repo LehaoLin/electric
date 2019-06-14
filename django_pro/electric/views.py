@@ -41,23 +41,23 @@ def index(request):
         ctx['result']  = round(float(result),1)
         return JsonResponse(ctx)
   
-    # a, b, c, d = aa()
-    # chart =  []
-    # for i in range(7):
-    #     max_ = a[i]
-    #     min_ = b[i]
-    #     work = c[i]
-    #     print(max_, min_, work)
-    #     list1 = [max_, min_, work]
-    #     r = str(pred(list1))
-    #     chart.append({
-    #         'max':max_,
-    #         'min':min_,
-    #         'work': '休假' if work == 0 else '工作',
-    #         'day':d[i],
-    #         'count':round(float(r),1)
-    #     })
-    # ctx['chart'] = chart
+    a, b, c, d = aa()
+    chart =  []
+    for i in range(7):
+        max_ = a[i]
+        min_ = b[i]
+        work = c[i]
+        print(max_, min_, work)
+        list1 = [max_, min_, work]
+        r = str(pred(list1))
+        chart.append({
+            'max':max_,
+            'min':min_,
+            'work': '休假' if work == 0 else '工作',
+            'day':d[i],
+            'count':round(float(r),1)
+        })
+    ctx['chart'] = chart
 
 
     return render(request, 'index.html', ctx)
